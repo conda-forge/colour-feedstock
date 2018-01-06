@@ -1,8 +1,8 @@
 {% set name = "colour" %}
-{% set version = "0.1.4" %}
+{% set version = "0.1.5" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "1357f37ddfd0d7c0e770f0772901635b3a38025a2480a44280510faca30fb509" %}
+{% set hash = "af20120fefd2afede8b001fbef2ea9da70ad7d49fafdb6489025dae8745c3aee" %}
 {% set build = 0 %}
 
 package:
