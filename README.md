@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/colour-feedstoc
 
 Home: https://github.com/vaab/colour
 
-Package license: BSD 2-Clause
+Package license: BSD-2-Clause
 
 Summary: Python color representations manipulation library (RGB, HSL, web, ...)
 
