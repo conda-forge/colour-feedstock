@@ -22,7 +22,7 @@ build:
 requirements:
   build:
     - python >=3.8
-    - setuptools
+    - setuptools <=67  # deprecated setup.py install is used
     - d2to1
 
   run:
