@@ -1,36 +1,34 @@
 {% set name = "colour" %}
 {% set version = "0.1.5" %}
-{% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash = "af20120fefd2afede8b001fbef2ea9da70ad7d49fafdb6489025dae8745c3aee" %}
-{% set build = 1 %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/colour-{{ version }}.tar.gz
+  sha256: af20120fefd2afede8b001fbef2ea9da70ad7d49fafdb6489025dae8745c3aee
 
 build:
   noarch: python
-  number: {{ build }}
-  script: {{ PYTHON }} setup.py install --single-version-externally-managed --record=record.txt
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
-  build:
-    - python >=3.8
-    - setuptools <=67  # deprecated setup.py install is used
+  host:
+    - python >=3.7
     - d2to1
-
+    - pip
   run:
-    - python >=3.8
+    - python >=3.7
 
 test:
   imports:
     - colour
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/vaab/colour
