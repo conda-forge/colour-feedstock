@@ -3,7 +3,7 @@
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
 {% set hash = "af20120fefd2afede8b001fbef2ea9da70ad7d49fafdb6489025dae8745c3aee" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 package:
   name: {{ name|lower }}
@@ -17,16 +17,16 @@ source:
 build:
   noarch: python
   number: {{ build }}
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  script: {{ PYTHON }} setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
   build:
-    - python
+    - python >=3.8
     - setuptools
     - d2to1
 
   run:
-    - python
+    - python >=3.8
 
 test:
   imports:
@@ -36,7 +36,7 @@ about:
   home: https://github.com/vaab/colour
   summary: 'Python color representations manipulation library (RGB, HSL, web, ...)'
   license_file: LICENSE
-  license: BSD 2-Clause
+  license: BSD-2-Clause
   license_family: BSD
   dev_url: https://github.com/vaab/colour
   doc_url: https://github.com/vaab/colour
