@@ -19,6 +19,7 @@ requirements:
     - python >=3.7
     - d2to1
     - pip
+    - setuptools <=67  # deprecated setup.py install is used
   run:
     - python >=3.7
 
